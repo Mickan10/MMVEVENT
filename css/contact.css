@@ -1,0 +1,58 @@
+/*  Contact   */
+.contact-container {
+    text-align: center;
+    padding: 30px;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+
+.contact-container h1,
+.contant-container p
+{
+    color: rgb(0, 0, 0);
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* För att hindra att elementen bryter till nästa rad */
+    gap: 30px; /* Mellanrum mellan rutorna */
+    margin-top: 40px;
+    overflow-x: auto; /* Tillåter horisontell scroll om elementen inte får plats */
+    color: black;
+}
+
+.team-member {
+    background-color: #f8f6f6;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Gör rutorna bredare */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.team-member img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.team-member .title {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 10px;
+}

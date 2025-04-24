@@ -1,0 +1,791 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+
+/***** Header *****/
+header.hero {
+    background-color: #f3f3f3; 
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    gap: 10px; /* Skapar mellanrum mellan sektionerna */
+}
+
+/* ======= Navigation - placerar knappar före och efter h1 ======= */
+.hero-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.hero-content {
+    background-color: rgba(246, 242, 242, 0.6);
+    padding: 20px 40px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+/* ====== Utdraget h1 ====== */
+.hero-content h1 {
+    font-size: 47px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    word-spacing: 8px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 15px;
+    font-weight: 300;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 1.2;
+    color: #333;
+}
+
+/* ======= Knappstil ======= */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(23, 22, 22);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    color: rgb(161, 161, 161);
+    text-decoration: underline;
+}
+
+
+#events {
+    text-align: center;
+    padding: 40px 0;
+}
+
+#events h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.btn-l
+{
+    background-color: #ccbcaf;
+    border: black solid 1px;
+}
+
+.btn-l:hover
+{
+    background-color: #080808;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.event {
+    background-color: white;
+    color: rgb(38, 37, 37);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.event:hover {
+    transform: scale(1.05);
+}
+
+.event img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.event h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.event p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.event button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.border {
+    border-top: 2px solid rgb(97, 94, 94);
+    width: 100%;
+    margin: 10px 0;
+}
+
+button.gallery-prev, button.gallery-next {
+    all: unset;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(14, 14, 14);
+    background-color: rgba(255, 255, 255, 0.527);
+    border: none;
+    font-size: 40px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+button.gallery-prev:hover, button.gallery-next:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.738);
+}
+
+button.gallery-prev {
+    left: 0;
+}
+
+button.gallery-next {
+    right: 0;
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+#gallery
+{
+    background: white;
+    padding: 50px 0;
+    color: #fff;
+    width: 100%;
+}
+
+#gallery h2
+{
+    color: rgb(27, 27, 27);
+    margin: 4px;
+}
+
+.gallery img {
+    width: calc(100% / 3);
+    flex-shrink: 0;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.gallery-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gallery-button {
+    display: inline-block;
+    background-color: #ccbcaf;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: solid black 1px;
+    transition: background 0.3s;
+}
+
+.gallery-button:hover {
+    background-color: black;
+}
+
+/* Sponsor box */
+.sponsors {
+    max-width: 1200px; 
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
+    background: #ccbcaf;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.sponsors h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sponsors-container {
+    display: flex;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+    width: 60%; /* Ger logotyperna mer plats */
+}
+
+.sponsor {
+    position: relative;
+    width: 45%;  /* Gör varje logotyp större och två per rad */
+    height: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sponsor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.sponsor:hover img {
+    filter: blur(3px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sponsor:hover .overlay {
+    opacity: 1;
+}
+
+
+
+/* Om oss sektion */
+.about {
+    width: 35%; /* Placerar texten till höger */
+    color: #fff;
+    font-size: 1em;
+}
+
+.about h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1em;
+    color: #ccc;
+}
+
+
+/*****historia *****/
+.loksatallet-intro {
+    background: linear-gradient(to right, #f8f4ef, #efe7dd);
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #3d3d3d;
+    border-top: 5px solid #b08f62;
+    border-bottom: 5px solid #b08f62;
+  }
+  
+  .loksatallet-intro .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .loksatallet-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2em;
+    color: #5a4033;
+  }
+  
+  .loksatallet-intro .subheading {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1em;
+    color: #7d6651;
+  }
+  
+  .loksatallet-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1em;
+  }
+  
+  .loksatallet-intro ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2em;
+  }
+  
+  .loksatallet-intro ul li {
+    font-size: 1.1rem;
+    margin: 0.5em 0;
+  }
+
+/**** kontakt *****/
+.contact-section {
+    background-color: #f5f2ec;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #3a2e2e;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .contact-container h2 {
+    font-size: 2.2rem;
+    color: #5a4033;
+    margin-bottom: 0.5em;
+  }
+  
+  .contact-container .intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 2em;
+    color: #6b5e53;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: left;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .contact-form button {
+    background-color: #b08f62;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #9b7b50;
+  }
+  
+
+
+/***** Footer *****/
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ebeae6;
+}
+
+.footer-section p, 
+.footer-section ul {
+    font-size: 0.9em;
+    margin: 0 0 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffd700;
+}
+
+.social-icons a {
+    color: #ddd;
+    font-size: 24px;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8em;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    color: #ccc;
+}
+
+
+
+
+
+/***** Formulär *****/
+main {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Rubriker */
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+}
+
+h2
+{
+    font-style: italic;
+}
+
+h1
+{
+    border-bottom: #060606 solid 0.5px;
+}
+
+/* Steg-sektionerna */
+section {
+    margin-bottom: 20px;
+}
+
+/* Formulär etiketter */
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Inputfält och select */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Nummerinput 
+input[type="number"] {
+    -moz-appearance: textfield;
+} */
+
+/* Välj knapp */
+button {
+    background-color: #264322;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #333e33;
+}
+
+/* Price output */
+#priceOutput {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Göra sektioner osynliga när de inte ska visas */
+section[style="display: none;"] {
+    display: none;
+}
+
+/* Små justeringar för inputfälten */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Formulärknappar */
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+
+/* LOKALER */
+.lokaler-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.lokaler-container h1 {
+    text-align: center;
+    color: #264322;
+    border-bottom: 3px solid #264322;
+    padding-bottom: 10px;
+}
+
+.lokal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lokal.reverse {
+    flex-direction: row-reverse;
+}
+
+.lokal-text {
+    width: 45%;
+}
+
+.lokal-text h2 {
+    color: #264322;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.lokal-text p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.lokal-bild {
+    width: 45%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    border-radius: 10px;
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+
+/* För små skärmar (responsiv design) */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/***** Media *****/
+@media (max-width: 600px) {
+    body {
+        padding: 0 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px; /* Minska fontstorleken för mindre skärmar */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .events {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event {
+        width: 100%; /* Full bredd på små skärmar */
+    }
+
+    .gallery img {
+        width: 100%; /* Full bredd på bilder på små skärmar */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    form fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    label {
+        flex: 1 1 30%;
+    }
+
+    input, select, textarea {
+        flex: 2 1 60%;
+    }
+}
