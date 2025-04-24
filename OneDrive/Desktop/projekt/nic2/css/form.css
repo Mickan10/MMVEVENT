@@ -1,0 +1,65 @@
+/* Formulär/Spelförfrågningar */
+main {
+    background-color: #dec69b;
+    padding: 60px 20px; /* lite mer luft runt hela innehållet */
+}
+
+.band-organizer-info, .band-organizer-form {
+    background-color: #ffffff;
+    margin: 40px auto;
+    padding: 40px;
+    max-width: 900px; /* större bredd */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.band-organizer-info h2, 
+.band-organizer-form h2 {
+    font-size: 32px; /* större rubriker */
+    margin-bottom: 20px;
+}
+
+.band-organizer-info p {
+    font-size: 20px; /* större brödtext */
+    line-height: 1.7;
+    margin: 0 0 20px;
+}
+
+.band-organizer-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.band-organizer-form label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.band-organizer-form input, 
+.band-organizer-form textarea, 
+.band-organizer-form select, 
+.band-organizer-form button {
+    padding: 18px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.band-organizer-form textarea {
+    resize: vertical; /* tillåt användare att ändra höjd */
+}
+
+.band-organizer-form button {
+    background: #191818;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 22px;
+    padding: 18px;
+}
+
+.band-organizer-form button:hover {
+    background: #272626;
+}

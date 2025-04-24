@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boka Lokstallet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="page.js" defer></script>
+</head>
+<body>
+
+    <li>
+        <a href="../index.html" class="btn">
+          <img src="Bilder/mmvevent.png" alt="MMV Event logga" style="height: 80px;">
+        </a>
+    </li>
+
+    <header class="hero">
+        
+        <div class="hero-content">
+            <h1>Lokstallet</h1>
+            <p>Boka Lokstallet – Skapa oförglömliga minnen i vår unika lokal.</p>
+        </div>
+    
+        <nav class="hero-nav">
+            <ul class="nav-links bottom-nav">
+                <li><a href="index-lok.html" class="btn">Home</a></li>
+                <li><a href="formulär.html" class="btn">Boka Lokstallet</a></li>
+                <li><a href="#events" class="btn">Evenemang & Biljetter</a></li>
+                <li><a href="lokaler.html" class="btn">Lokstallets lokaler</a></li>
+                <li><a href="historia.html" class="btn">Historia</a></li>
+                <li><a href="kontakt.html" class="btn">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h1>Boka Lokal</h1>
+        
+            <!-- Steg 1: Val av lokal och tillval -->
+            <section id="step1">
+                <h2>Lokal och tillval – Din fest, dina regler!</h2>
+                <label for="local">Välj lokal:</label>
+                <select id="local">
+                    <option value="">Välj...</option>
+                    <option value="köket">Köket</option>
+                    <option value="lillaScenen">Lilla Scenen</option>
+                    <option value="storaScenen">Stora Scenen</option>
+                    <option value="konferensrum">Konferensrum</option>
+                    <option value="helaLokalen">Hela lokalen</option>
+                    <option value="dagskontor">Dagskontor</option>
+                </select>
+            
+                <label for="eventType">Typ av evenemang:</label>
+                <select id="eventType">
+                    <option value="">Välj...</option>
+                    <option value="konsert">Konsert</option>
+                    <option value="teater">Teater</option>
+                    <option value="föreläsning">Föreläsning</option>
+                    <option value="konferens">Konferens</option>
+                    <option value="privat">Privat (bröllop m.m.)</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="annat">Annat</option>
+                </select>
+            
+                <!-- Fritextruta visas när "Annat" är valt -->
+                <div id="otherEvent" style="display:none;">
+                    <label for="otherEventDescription">Beskriv ditt evenemang:</label>
+                    <textarea id="otherEventDescription" placeholder="Skriv här..."></textarea>
+                </div>
+                
+                <label for="audioTech">Ljudtekniker:</label>
+                <select id="audioTech">
+                    <option value="nej">Nej</option>
+                    <option value="ja">Ja</option>
+                    <option value="egen">Egen</option>
+                </select>
+            
+                <label for="lightTech">Ljustekniker:</label>
+                <select id="lightTech">
+                    <option value="nej">Nej</option>
+                    <option value="ja">Ja</option>
+                    <option value="egen">Egen</option>
+                </select>
+            
+                <label for="extraPersonnel">Extra personal (antal):</label>
+                <input type="number" id="extraPersonnel" min="0" value="0">
+            
+                <label for="ticketSales">Biljettförsäljning:</label>
+                <select id="ticketSales">
+                    <option value="nej">Nej</option>
+                    <option value="ja">Ja</option>
+                </select>
+            
+                <label for="catering">Catering:</label>
+                <select id="catering">
+                    <option value="nej">Nej</option>
+                    <option value="ja">Ja</option>
+                </select>
+            
+                <button id="calculatePrice">Beräkna pris</button>
+                <p id="priceOutput">Totalpris: 0 SEK</p>
+                <button id="goToStep2" style="display:none;">Gå vidare</button>
+            </section>
+            
+        
+            <!-- Steg 2: Välj datum -->
+            <section id="step2" style="display:none;">
+                <h2>Välj datum</h2>
+                <input type="date" id="bookingDate">
+                <button id="goToStep3">Nästa</button>
+            </section>
+        
+            <!-- Sammanfattning av bokningen (under step2) -->
+            <section id="summarySection" style="display: none;">
+                <h3>Sammanfattning av din bokning</h3>
+                <div id="summaryContent"></div>
+            </section>
+        
+            <!-- Steg 3: Kontaktuppgifter -->
+            <section id="step3" style="display:none;">
+                <h2>Kontaktuppgifter</h2>
+        
+                <!-- Namn och e-post -->
+                <label for="name">Namn:</label>
+                <input type="text" id="name" required>
+        
+                <label for="email">E-post:</label>
+                <input type="email" id="email" required>
+        
+                <!-- Val av typ -->
+                <label for="customerType">Välj typ:</label>
+                <select id="customerType" required>
+                    <option value="">Välj...</option>
+                    <option value="privatperson">Privatperson</option>
+                    <option value="företag">Företag</option>
+                    <option value="arrangör">Arrangör</option>
+                </select>
+        
+                <!-- Nytt fält för organisationsnummer -->
+                <label for="orgNumber">Organisationsnummer:</label>
+                <input type="text" id="orgNumber" placeholder="ÅÅÅÅMMDD-XXXX" required>
+        
+                <!-- Nytt fält för telefonnummer -->
+                <label for="phone">Telefonnummer:</label>
+                <input type="tel" id="phone" placeholder="070-123 45 67" required>
+        
+                <!-- Vill du bli kontaktad? -->
+                <label for="contactRequest">Vill du att ansvarig på Lokstallet kontaktar dig?</label>
+                <select id="contactRequest">
+                    <option value="nej">Nej</option>
+                    <option value="ja">Ja</option>
+                </select>
+        
+                <!-- Skicka förfrågan -->
+                <button id="submitForm">Skicka förfrågan</button>
+            </section>
+        </div>
+        
+    </main>
+    
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <h2>Lokstallet</h2>
+                <p>Din plats för musik, kultur och kreativitet.</p>
+            </div>
+            <div class="footer-section links-section">
+                <h3>Snabblänkar</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Evenemang</a></li>
+                    <li><a href="#gallery">Galleri</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Kontakt</h3>
+                <p>Lokstallet AB</p>
+                <p>E-post: info@lokstallet.se</p>
+                <p>Telefon: +46 123 456 789</p>
+            </div>
+            <div class="footer-section social-section">
+                <h3>Följ oss</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lokstallet. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+</body>
+</html>
