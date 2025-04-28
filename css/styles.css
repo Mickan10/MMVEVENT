@@ -1,0 +1,485 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Bilo', sans-serif;
+    background-color: rgb(255, 255, 255); 
+    color: black;
+}
+
+main {
+    flex: 1;
+}
+
+.lokstallet-btn {
+    display: inline-block;
+    padding: 18px 36px;  /* Större padding för knappar */
+    color: #000000;
+    font-size: 22px;  /* Större textstorlek */
+    font-weight: bold;
+    border: black 1px solid;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+    margin-right: 1850px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;  /* Öka padding för större header */
+    background-color: #ffffff;
+    position: relative;
+    text-align: center;
+    height: 800px; /* Öka höjden på headern */
+}
+
+/* ======= LOGOTYP ======= */
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Öka höjden på logo-container */
+    margin-top: 60px;
+}
+
+/* Största loggan - placeras i centrum */
+.logo-mmv {
+    width: 480px;  /* Större logga */
+    height: auto; 
+    object-fit: contain;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Första bakgrundsbilden - placeras bakom och till vänster */
+.bild-header2 {
+    width: 450px;  /* Större bild */
+    height: 450px;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    left: -350px;
+    z-index: 2;
+    opacity: 0.95;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Andra bakgrundsbilden - placeras bakom och till höger */
+.bild-logo2 {
+    width: 420px;  /* Större bild */
+    height: 420px;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    right: -330px;
+    z-index: 1;
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ======= HEADER TITEL ======= */
+.header-title {
+    font-size: 40px;  /* Större textstorlek */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 50px;
+    color: black;
+}
+
+/* linje (alla sidor)  */
+hr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    width: 80%;
+    margin: 20px auto;
+}
+
+
+/* ======= NAVIGATION ======= */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Större gap mellan länkar */
+    padding: 0;
+    margin-top: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 22px;  /* Större textstorlek */
+    padding: 10px 18px; /* Större padding */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: black;
+    background-color: #e5b970;
+    transform: translateY(-3px);
+}
+
+.nav-links li a.active {
+    background: linear-gradient(135deg, #c58e3e, #e5b970);
+    color: rgb(0, 0, 0);
+    transform: translateY(0);
+}
+
+
+
+/* Bilder start-sida, från instagram??*/
+.social-media-gallery-container {
+    display: flex;
+    flex-direction: column;  /* Gör så att innehållet placeras vertikalt */
+    align-items: center;     /* Centrerar innehållet horisontellt */
+    text-align: center;      /* Centrerar texten */
+    margin-top: 650px;       /* Öka avståndet så att det inte täcker headern */
+}
+
+
+.social-media-gallery h2 {
+    font-size: 24px;
+    margin-top: 150px;
+}
+
+.social-media-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; 
+}
+
+.social-media-gallery img {
+    width: 450px;          
+    height: 450px;           
+    opacity: 0;             
+    animation: fadeIn 1s ease-in forwards; 
+}
+
+.fade-in {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.3s; }
+.fade-in:nth-child(2) { animation-delay: 0.6s; }
+.fade-in:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* text-boxar */
+.text-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 190px;
+    padding: 50px 30px;
+    background-color: #dec69b;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.left-text, .right-text {
+    padding: 30px 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.left-text h3, .right-text h3 {
+    font-size: 41px;
+    font-weight: 700;
+    margin-bottom: 1px;
+    color: #111;
+}
+
+.left-text p, .right-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* EVENT-POSTERS start-sida  */
+.upcoming-events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px; /* Ökat marginal för mer utrymme */
+}
+
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Ökat avstånd för att ge mer utrymme för varje event */
+    justify-content: center;
+    margin-top: 100px; /* Justerat för att placera listan närmare */
+}
+
+.event-item {
+    background-color: #ffffff;
+    color: #000000;
+    width: 350px; /* Ökat bredd för större kort */
+    padding: 30px; /* Ökat padding för större utrymme */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: solid rgb(180, 180, 180) 1px;
+    height: 450px; /* Ökat höjd för mer utrymme */
+}
+
+.event-image {
+    width: 100%;
+    height: 300px; /* Ökat höjd på bilden */
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px; /* Ökat mellanrum mellan bild och text */
+}
+
+.event-item h3 {
+    font-size: 24px; /* Större text för titeln */
+    margin: 15px 0;
+    font-weight: bold;
+    color: #000000;
+}
+
+.event-item p {
+    font-size: 18px; /* Större text för beskrivningen */
+    color: #000000;
+    margin: 10px 0;
+}
+
+.event-item p strong {
+    color: #000000;
+}
+
+.event-item:hover {
+    transform: translateY(-8px); /* Större rörelse vid hover */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2); /* Större skugga */
+}
+
+.event-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #000000;
+}
+
+.event-item p {
+    font-size: 16px;
+    color: #000000;
+    margin: 5px 0;
+}
+
+.event-item p strong {
+    color: #000000;
+}
+
+
+.cta-button {
+    background: linear-gradient(135deg, #c58e3e, #e5b970);
+    color: #111111;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* Footer */
+footer {
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: auto;
+    gap: 0px;
+}
+
+footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap; /* Se till att inget bryts till en ny rad */
+    justify-content: space-between; /* Jämnt mellanrum mellan sektionerna */
+    align-items: flex-start; /* Vertikalt anpassa till toppen */
+    gap: 30px; /* Mellanrum mellan sektionerna */
+}
+
+footer .footer-section {
+    flex: 1 1 250px; /* Flexibla sektioner med minsta bredd på 250px */
+    text-align: left;
+}
+
+.logo-mmv-fot {
+    width: 100%; /* Gör så att bilden anpassas till sin containerbredd */
+    max-width: 150px; /* Sätter ett maximalt värde för bredden på bilden */
+    height: auto; /* Bevarar bildens proportioner */
+    margin-bottom: 20px;
+    display: block; /* Se till att bilden visas som blockelement */
+}
+
+footer h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #efede8;
+}
+
+footer p,
+footer a {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #f1c40f;
+}
+
+footer .social-icons {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+    margin-top: 15px;
+    justify-content: center; /* Centrerar sociala ikoner */
+}
+
+footer .social-icons li {
+    display: inline-block;
+}
+
+footer .social-icons a {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #f1c40f;
+}
+
+.form-button-container {
+    display: flex;
+    flex-direction: column; /* Gör så att innehållet staplas vertikalt */
+    justify-content: center;
+    align-items: center; /* Centrerar innehållet horisontellt */
+    margin-top: 20px;
+}
+
+.form-button-container h3 {
+    font-size: 22px;
+    margin-bottom: 10px; /* Lite mellanrum mellan rubriken och knappen */
+    color: #efede8; /* Färg som matchar resten av footern */
+}
+
+.form-button-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #c58e3e, #e5b970);
+    border-radius: 50%;
+    height: 100px; /* Justera höjd för att göra knappen rund */
+    width: 100px; /* Justera bredd för att göra knappen rund */
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+footer p {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+
+/* För stora skärmar */
+@media (min-width: 1200px) {
+    /* Anpassa knappar eller andra element för större skärmar */
+    .lokstallet-btn {
+        font-size: 24px;  /* Exempel på att öka fontstorlek för större skärmar */
+        padding: 20px 40px;
+    }
+
+    .header-title {
+        font-size: 50px;  /* Exempel på att ändra fontstorlek för större skärmar */
+    }
+
+    /* Andra anpassningar för större skärmar */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
