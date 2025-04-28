@@ -1,0 +1,230 @@
+.resorna {
+    
+    background-size: cover;
+    padding: 50px;
+    background-color: #edebeb;
+    text-align: center;
+    min-height: 100vh; /* Säkerställer att innehållet får rätt höjd */
+    display: flex;
+    flex-direction: column; /* Gör allt innehåll staplat vertikalt */
+    align-items: center; /* Centrerar horisontellt */
+    gap: 20px;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.text-resor {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    height: 80vh;
+    width: 450px;
+    padding: 20px;
+    overflow: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-resor h3 {
+    font-size: 22px;
+    color: #c62f2f;
+    margin: 0;
+    padding-top: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.text-resor p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    margin: 8px 0;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.text-resor li
+{
+    text-align: left;
+    margin: 0px 1px 3px 3px;
+}
+
+.bokning {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    height: 18vh;
+    width: 350px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bokning p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify;
+}
+
+/* Styling Facebook Page Plugin */
+.fb-page {
+    border-radius: 10px;
+    height: 80vh;
+    width: 450px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto; 
+    padding: 0px;
+}
+
+/* Link styling inside the Facebook Plugin */
+.fb-page a {
+    color: #1877f2; 
+    font-size: 16px;
+    text-decoration: none;
+    height: 100%;
+}
+
+.fb-page a:hover {
+    text-decoration: underline; 
+}
+
+
+/* Kontakta oss knapp */
+.kontakt-knapp-container {
+    display: flex;
+    justify-content: center; /* Centrerar knappen horisontellt */
+    margin: 0px 0 20px 0; /* Ger avstånd ovanför och under */
+}
+
+.kontakta {
+    padding: 15px 30px;
+    background-color: rgb(171, 15, 15);
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    transition: transform 0.5s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 5px rgb(2, 2, 2);
+    display: inline-block; 
+}
+
+.kontakta:hover {
+    cursor: pointer;
+    background-color: #8f1010;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resorna {
+        flex-direction: column; /* Gör att elementen staplas vertikalt */
+        padding: 20px; /* Minskar padding */
+        height: auto; /* Låter sektionen anpassa höjden */
+    }
+
+    .text-resor, .bokning, .fb-page {
+        width: 90%; /* Gör elementen nästan lika breda som skärmen */
+        height: auto; /* Låter elementen justera sin höjd automatiskt */
+        margin: 10px auto; /* Centrerar elementen */
+    }
+
+    .text-resor {
+        padding: 15px; /* Minskar padding för mindre skärmar */
+    }
+
+    .text-resor h3 {
+        font-size: 18px; /* Minskar fontstorleken */
+    }
+
+    .text-resor p {
+        font-size: 14px; /* Gör texten mindre */
+    }
+
+    .bokning {
+        height: auto; /* Anpassar bokningskortet till innehållet */
+    }
+
+    .bokning p {
+        font-size: 23px; /* Mindre textstorlek för bokning */
+    }
+
+    .fb-page {
+        height: auto; /* Låter Facebook-plugin justera höjden */
+        padding: 5px; /* Minskar padding */
+    }
+
+    .fb-page a {
+        font-size: 14px; /* Mindre textstorlek för länkar */
+    }
+}
+
+@media (max-width: 390px) {
+    .resorna {
+        gap: 6px; /* Minskar mellanrummet mellan korten */
+    }
+
+    .text-resor, .bokning, .fb-page {
+        width: 100%; /* Gör elementen så breda som möjligt */
+        text-align: center;
+    }
+
+    .text-resor h3 {
+        font-size: 19px; /* Justerar rubrikens storlek */
+    }
+
+    .text-resor p, .bokning p {
+        font-size: 17px; 
+        line-height: 1.1;
+    }
+
+    .text-resor ul {
+        list-style-type: none; /* Removes the bullet points */
+        padding: 0; /* Removes padding */
+        text-align: left; /* Centers the list items */
+    }
+    
+    .text-resor ul li {
+        display: inline-block; /* Makes list items appear side by side */
+        margin: 0 15px; /* Adds space between the list items */
+    }
+    
+    .text-resor ul li:before {
+        content: "• "; /* Adds a bullet-like symbol before each list item */
+        color: #000; /* Set the bullet color */
+    }
+
+    .fb-page a {
+        font-size: 12px; /* Minskar textstorlek på länkar */
+    }
+}
+
+@media (max-width: 768px) {
+    .kontakt-knapp-container {
+        margin: 15px 0; /* Mindre avstånd på mindre skärmar */
+    }
+
+    .kontakta {
+        font-size: 15px; /* Mindre textstorlek */
+        padding: 10px 20px; /* Mindre padding */
+    }
+}
+
+@media (max-width: 390px) {
+    .kontakt-knapp-container {
+        margin: 10px 0;
+    }
+
+    .kontakta {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+
+

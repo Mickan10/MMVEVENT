@@ -1,0 +1,481 @@
+/* Grundinställningar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #edebeb;
+    color: #333;
+}
+
+header {
+    display: flex;
+    flex-direction: column; /* Byt från row till column för att ordna rubrik och meny under varandra */
+    align-items: center; /* Centrera innehållet horisontellt */
+    background: linear-gradient(rgba(231, 231, 231, 0.819), rgba(215, 213, 213, 0.753), rgba(101, 99, 99, 0.688));
+    padding: 40px;
+}
+
+header h2 {
+    color: rgb(171, 15, 15);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    margin-bottom: 20px; /* Lägg till lite mellanrum under rubriken */
+}
+
+/* Telefonnr */
+.Telefonnr {
+    font-style: italic;
+    text-align: left;
+}
+
+/* Menyknappar */
+.meny-knappar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrera menyknapparna */
+    gap: 20px;
+    width: 100%; 
+}
+
+.meny-knappar a {
+    background-color: rgb(171, 15, 15);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 7px;
+    box-shadow: 0 4px 5px rgb(87, 85, 85);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    white-space: nowrap; 
+}
+
+.meny-knappar a:hover {
+    cursor: pointer;
+    transform: scale(1.0);
+    box-shadow: 0 6px 7px rgb(71, 69, 69);
+    background-color: #a21111;
+}
+
+.meny-knappar a.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+/* Linjer under menyn */
+.underline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(179, 170, 170);
+}
+
+.underline {
+    height: 7px;
+    width: 100%;
+}
+
+.red {
+    background-color: rgb(245, 35, 35);
+}
+
+.light-red {
+    background-color: rgba(201, 21, 21, 0.8);
+    margin: 1.9px;
+}
+
+.lighter-red {
+    background-color: rgb(171, 15, 15);
+    height: 15px;
+}
+
+
+/* Hero-sektion */
+.hero {
+    height: 66vh;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row; 
+    color: #131212;
+    padding: 20px;
+    border: 10px solid rgb(255, 255, 253);
+    gap: 100px;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.hero h1 {
+    font-size: 35px;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px rgba(82, 81, 81, 0.5);
+    margin: 0;
+}
+
+.hero p {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.hero li {
+    line-height: 1.4;
+    color: #353434;
+    font-style: bold;
+    text-align: left;
+}
+
+/* Kontakta oss knapp */
+.contact-knapp {
+    padding: 15px 30px;
+    background-color: rgb(171, 15, 15);
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 5px rgb(2, 2, 2);
+    position: relative;
+    top: 20px;
+}
+
+.contact-knapp:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #8f1010;
+}
+
+#bussbild {
+    width: 100%; 
+    max-width: 600px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    justify-content: right;
+}
+
+/* Text-ruta */
+.bussar {
+    width: 25%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    text-align: center;
+}
+
+.bussar p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+/* Förbättrade rubriker */
+.bussar h3 {
+    font-size: 22px;
+    color: rgb(171, 15, 15);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/* Bussbilder */
+.buss-photos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    background: linear-gradient(rgba(231, 231, 231, 0.819), rgba(215, 213, 213, 0.753), rgba(101, 99, 99, 0.688));
+}
+
+/* Bildbehållare */
+.photo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Bilder i rad */
+.images {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    gap: 10px; /* Mellanrum mellan bilder */
+}
+
+/* Enskilda bilder */
+.images img {
+    width: calc((100% - 20px) / 3);
+    height: 280px; 
+    flex-shrink: 0; 
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Piltangenter */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+/* Scroll-knapp */
+.scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #272829a0;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn i {
+    font-size: 24px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px; 
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    min-height: 200px; 
+}
+
+.text-line {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.text-line::before,
+.text-line::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid rgb(210, 210, 210);
+    margin: 0 10px;
+}
+
+
+.footer-container {
+    display: flex;
+    flex-direction: row; 
+    gap: 150px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-column {
+    width: 100%;
+    max-width: 200px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ce4444;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 13px;
+    margin-top: auto;
+    border-top: 1px solid #c0b7b7;
+    padding-top: 10px;
+    background-color: #333;
+    color: white;
+}
+
+
+/* Media Queries för responsiv design */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meny-knappar {
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+        border-bottom: solid 2px rgb(36, 34, 34);
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+
+    .bussar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .photo-container
+    {
+        width: 100%;
+    }
+
+    .buss-photos {
+        flex-direction: column;
+    }
+
+    .images img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stapar kolumner vertikalt */
+        gap: 20px; /* Mindre mellanrum mellan kolumner */
+        align-items: center; /* Centrerar kolumnerna */
+        text-align: center; /* Centrerar texten i kolumnerna */
+    }
+
+    .footer-column {
+        width: 80%; /* Kolumnerna får mer utrymme på små skärmar */
+        max-width: 350px;
+    }
+
+    .footer-column p {
+        font-size: 12px; /* Justera textstorleken för mindre skärmar */
+    }
+
+    .social-icons a {
+        font-size: 20px; /* Justera storleken på ikonerna för mindre skärmar */
+    }
+
+    .footer-bottom {
+        font-size: 12px; /* Minska fontstorleken för footer-bottom på mindre skärmar */
+    }
+}
+
+/* För ännu mindre skärmar */
+@media (max-width: 480px) {
+    header h2 {
+        font-size: 22px;
+    }
+
+    header {
+        height: auto; 
+        justify-self: center;
+        width: 100%;
+    }
+
+    .meny-knappar a {
+        font-size: 16px; 
+        padding: 5px 10px; 
+        
+    }
+
+    .meny-knappar {
+        flex-direction: column; 
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .bussar p {
+        font-size: 14px;
+    }
+
+    .scroll-btn {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .footer-container {
+        padding: 10px; 
+    }
+
+    .footer-column p {
+        font-size: 12px; 
+    }
+
+    .social-icons a {
+        font-size: 18px; 
+    }
+
+    .footer-bottom {
+        font-size: 11px; 
+    }
+}

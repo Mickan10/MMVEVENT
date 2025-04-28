@@ -1,0 +1,163 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    background-color: rgba(161, 146, 101, 0.512);
+}
+
+header {
+    display: flex;
+    background: #0d2941;
+    color: #ffffff;
+    padding: 20px 0;
+    align-items: center;
+    height: 20vh;
+}
+
+.logo img
+{
+    height: 120px;
+}
+
+nav ul li 
+{
+    display: inline;
+    margin: 5px;
+}
+
+nav ul li a 
+{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 13px 19px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0px 0px 0px 40px;
+    
+}
+
+nav ul li a:hover {
+    background-color: #939175;
+    transform: translateY(-2px);
+}
+
+section
+{
+    padding: 20px;
+    margin: 0px;
+    background-color: rgba(161, 146, 101, 0.512);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 15vh;
+}
+
+
+.property-list 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 70vh;
+    align-items: center;
+}
+
+.property-card 
+{
+    background-color: rgba(161, 146, 101, 0.512);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 400px; 
+    height: 350px;
+}
+
+.property-card img 
+{
+    width: 100%;
+    height: auto;
+}
+
+.property-card h2 
+{
+    margin: 10px;
+    font-size: 1.5em;
+}
+
+.property-card p 
+{
+    margin: 10px;
+}
+
+.property-card:hover 
+{
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer 
+{
+    background: #0d2941;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.footer-container 
+{
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.footer-column 
+{
+    width: 20%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-column p 
+{
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-bottom 
+{
+    text-align: center;
+    margin: 10px auto;
+    border-top: 1px solid #c0b7b7;
+    font-size: 13px;
+}
+
+/* Sociala medier kod 
+.social-icons 
+{
+    margin-top: 10px;
+}
+
+.social-icons a 
+{
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover 
+{
+    color: #ce4444;  
+}*/
+
+/*text rättigheter */
