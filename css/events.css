@@ -184,13 +184,17 @@
 
 .events-container {
     flex: 1;
-    max-width: 1300px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     gap: 20px;
     justify-content: flex-start;
+    max-width: 100%;
     overflow-y: auto;
+}
+
+.calendar-container {
+    width: 320px;
+    flex-shrink: 0;
 }
 
 .event-poster {
@@ -198,7 +202,7 @@
     border: 2px solid #dec69b;
     border-radius: 10px;
     padding: 15px;
-    width: 300px;
+    width: 280px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
