@@ -20,16 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Evenemangsdata och variabler
+
+// evenamng sökdunktioner 
+//sortera på genre, stad och datum
+
+// 1. Evenemangsdata och variabler
 let events = [
     { name: "Rock Night", date: "2025-05-10", city: "skövde", genre: "rock", description: "En kväll fylld med rockmusik från lokala band.", image: "Bilder/20241205_233217_540767.jpg" },
     { name: "Pop Festival", date: "2025-05-15", city: "skövde", genre: "pop", description: "Sveriges största popfestival med internationella artister.", image: "Bilder/20241207_215011_972979.jpg" },
-    { name: "Metal Madness", date: "2025-05-01", city: "skövde", genre: "metal", description: "En brutal kväll med de bästa metalbanden.", image: "Bilder/20241201_000118_24720.jpg" }
+    { name: "Metal Madness", date: "2025-0-01", city: "skövde", genre: "metal", description: "En brutal kväll med de bästa metalbanden.", image: "Bilder/20241201_000118_24720.jpg" }
 ];
 
 let currentDate = new Date();
 
-// Hämta formulär och inputfält
+// 2. Hämta formulär och inputfält
 const searchForm = document.getElementById('search-form');
 const cityInput = document.getElementById('city');
 const dateInput = document.getElementById('date');
@@ -40,7 +44,7 @@ const monthYear = document.getElementById('month-year');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
-// Hantera formens submit (sök)
+// 3. Hantera formens submit (sök)
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -58,13 +62,13 @@ searchForm.addEventListener('submit', function (e) {
     window.location.href = `events.html?${queryParams}`;
 });
 
-// Funktion för att hämta URL-parameter (t.ex. stad, datum, genre från URL)
+// 4. Funktion för att hämta URL-parameter (t.ex. stad, datum, genre från URL)
 function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
 
-// Funktion för att visa resultaten
+// 5. Funktion för att visa resultaten
 function displayResults(events) {
     resultsContainer.innerHTML = ""; // Rensa tidigare resultat
 
@@ -86,7 +90,7 @@ function displayResults(events) {
     });
 }
 
-// Filtrera och visa resultaten baserat på URL-parametrarna
+// 6. Filtrera och visa resultaten baserat på URL-parametrarna
 function filterEvents() {
     const selectedCity = getUrlParameter('city');
     const selectedDate = getUrlParameter('date');
@@ -102,13 +106,13 @@ function filterEvents() {
     displayResults(filteredEvents);
 }
 
-// När sidan är laddad, filtrera och visa evenemang baserat på URL-parametrarna
+// 7. När sidan är laddad, filtrera och visa evenemang baserat på URL-parametrarna
 window.onload = function () {
     filterEvents();
     renderCalendar();
 };
 
-// Funktion för att rendera kalendern
+// 8. Funktion för att rendera kalendern
 function renderCalendar() {
     daysContainer.innerHTML = ""; // Rensa dagar
 
@@ -132,8 +136,6 @@ function renderCalendar() {
         dayDiv.classList.add("calendar-day");
 
         const fullDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
-        console.log('Generated full date: ', fullDate); // Loggar genererat datum för debug
-
         const todaysEvents = events.filter(event => event.date === fullDate);
 
         if (todaysEvents.length > 0) {
@@ -164,7 +166,7 @@ function renderCalendar() {
     });
 }
 
-// Funktion för att visa event för ett specifikt datum
+// 9. Funktion för att visa event för ett specifikt datum
 function showEventsForDate(date) {
     const eventsOnDate = events.filter(event => event.date === date);
     displayResults(eventsOnDate);
