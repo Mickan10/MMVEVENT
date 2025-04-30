@@ -44,12 +44,12 @@ header {
     justify-content: center;
     align-items: center;
     height: 500px; /* Öka höjden på logo-container */
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 /* Största loggan - placeras i centrum */
 .logo-mmv {
-    width: 480px;  /* Större logga */
+    width: 380px;  /* Större logga */
     height: auto; 
     object-fit: contain;
     border-radius: 50%;
@@ -120,7 +120,7 @@ hr {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-size: 22px;  /* Större textstorlek */
+    font-size: 17px;  /* Större textstorlek */
     padding: 10px 18px; /* Större padding */
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -163,15 +163,15 @@ hr {
 }
 
 .social-media-gallery img {
-    width: 450px;          
-    height: 450px;           
+    width: 350px;          
+    height: 350px;           
     opacity: 0;             
     animation: fadeIn 1s ease-in forwards; 
 }
 
 .fade-in {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     border-radius: 20px;
     opacity: 0;
@@ -233,7 +233,7 @@ hr {
 .event-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Ökat avstånd för att ge mer utrymme för varje event */
+    gap: 20px; /* Ökat avstånd för att ge mer utrymme för varje event */
     justify-content: center;
     margin-top: 100px; /* Justerat för att placera listan närmare */
 }
@@ -241,7 +241,7 @@ hr {
 .event-item {
     background-color: #ffffff;
     color: #000000;
-    width: 350px; /* Ökat bredd för större kort */
+    width: 300px; /* Ökat bredd för större kort */
     padding: 30px; /* Ökat padding för större utrymme */
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
