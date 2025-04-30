@@ -13,8 +13,7 @@ main {
 }
 
 .lokstallet-btn {
-    display: inline-block;
-    padding: 18px 36px;  /* Större padding för knappar */
+    padding: 18px 36px;  /* Större padding för knappen */
     color: #000000;
     font-size: 22px;  /* Större textstorlek */
     font-weight: bold;
@@ -23,7 +22,10 @@ main {
     text-decoration: none;
     text-align: center;
     transition: background 0.3s, transform 0.2s;
-    margin: 20px auto;
+    display: inline-block;  /* Gör att knappen inte beter sig som ett block */
+    position: relative;  /* Gör att vi kan använda positionering */
+    z-index: 10;  /* Säkerställ att knappen är ovanpå andra element */
+    margin-top: 20px;  /* Lägg till lite utrymme ovanför knappen om den är för nära något annat */
 }
 
 header {
@@ -35,7 +37,9 @@ header {
     position: relative;
     text-align: center;
     height: 800px; /* Öka höjden på headern */
+    z-index: 1;  /* Gör att headern ligger bakom knappen */
 }
+
 
 /* ======= LOGOTYP ======= */
 .logo-container {
