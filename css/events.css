@@ -192,11 +192,6 @@
     overflow-y: auto;
 }
 
-.calendar-container {
-    width: 320px;
-    flex-shrink: 0;
-}
-
 .event-poster {
     background-color: #ffffff;
     border: 2px solid #dec69b;
