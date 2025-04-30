@@ -74,81 +74,19 @@
     justify-content: flex-start;
 }
 
-/* Evenemangsposters */
-
-#results-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-.events-container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    overflow-x: auto; 
-    margin-left: 20px; 
-    justify-content: flex-start;
-}
-
-/* Justera enskilda event */
-.event-poster {
-    background-color: #eae4e4;
-    border-radius: 10px;
-    padding: 15px;
-    width: 320px;  /* Bredden på posterna */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    margin: 5px;
-    box-sizing: border-box; /* Se till att padding och border ingår i bredden */
-}
-
-.event-poster:hover {
-    transform: translateY(-5px);
-}
-
-.event-poster .event-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.event-poster h4 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000000;
-    margin: 10px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.event-poster p {
-    margin: 5px 0;
-    color: #1f1e1e;
-    font-size: 16px;
-}
-
-.event-poster .event-date {
-    margin-top: 10px;
-    font-size: 14px;
-    font-style: italic;
-    color: #262323;
-}
-
-/* Kalender */
+/* Moderniserad och ljusare kalenderdesign */
 .calendar-container {
-    width: 370px; 
-    background-color: #111111;
-    border: 2px solid #2c2a2a;
+    width: 380px;
+    background-color: #ffffff; 
+    border: 2px solid #dec69b;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-    height: 660px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    height: 500px;
     flex-shrink: 0;
     margin-bottom: 20px;
+    color: #000000;
 }
 
 .calendar-header {
@@ -162,26 +100,22 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    color: #ffffff;
+    color: #6b4f0b;
 }
 
 .nav-button {
     background: none;
     border: none;
-    color: #ffffff;
+    color: #6b4f0b;
     font-size: 24px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .nav-button:hover {
-    color: #cccccc;
-}
-
-.calendar {
-    margin-top: 15px;
+    color: #a67c00;
 }
 
 .weekdays, .days {
@@ -193,62 +127,82 @@
 .weekdays div {
     font-weight: bold;
     font-size: 14px;
-    color: #cccccc;
+    color: #a67c00;
     text-transform: uppercase;
     padding: 5px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #d6a648;
 }
 
-/* Justera storleken på dagarna i kalendern */
 .days div {
-    width: 35px;  /* Mindre bredd */
-    height: 35px; /* Mindre höjd */
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px; /* Mindre padding */
-    font-size: 14px; /* Mindre text */
-    background-color: #2e2c2c;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #dec69b;
     border-radius: 5px;
-    color: #cccccc;
+    color: #4a3b0d;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .days div:hover {
-    background-color: #5f5e5e;
+    background-color: #f9e2a9;
     transform: scale(1.1);
 }
 
-/* Idag-markering */
 .days .today {
-    background-color: #191616;
+    background-color: #ffe082;
     font-weight: bold;
+    border: 1px solid #d6a648;
+}
+
+.event-day {
+    background-color: #f6d365 !important;
+    border: 2px solid #d4af37;
 }
 
 .logo-event {
-    width: 250px;
+    width: 200px;
     height: auto;
     border-radius: 50%;
-    position: relative;
-    top: 45px;
+    margin-top: 30px;
 }
 
-
-/* När det finns event på dagen - gör den ljusare */
-.event-day {
-    background-color: #4a4848 !important; /* Ljusare grå för bättre synlighet */
-    border-radius: 5px;
-}
-
-
-/* Förbättra dagarnas stil */
-.calendar-day {
-    width: 30px;
-    height: 40px;
+/* För bättre layoutintill event */
+.container-evente {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+    background-color: #fffaf0;
     justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.events-container {
+    flex: 1;
+    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.event-poster {
+    background-color: #ffffff;
+    border: 2px solid #dec69b;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-poster:hover {
+    transform: translateY(-5px);
 }

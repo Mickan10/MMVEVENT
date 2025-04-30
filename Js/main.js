@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 1. Evenemangsdata och variabler
 let events = [
-    { name: "Rock Night", date: "2025-02-10", city: "skövde", genre: "rock", description: "En kväll fylld med rockmusik från lokala band.", image: "Bilder/20241205_233217_540767.jpg" },
-    { name: "Pop Festival", date: "2025-02-15", city: "skövde", genre: "pop", description: "Sveriges största popfestival med internationella artister.", image: "Bilder/20241207_215011_972979.jpg" },
-    { name: "Metal Madness", date: "2025-02-20", city: "skövde", genre: "metal", description: "En brutal kväll med de bästa metalbanden.", image: "Bilder/20241201_000118_24720.jpg" }
+    { name: "Rock Night", date: "2025-05-10", city: "skövde", genre: "rock", description: "En kväll fylld med rockmusik från lokala band.", image: "Bilder/20241205_233217_540767.jpg" },
+    { name: "Pop Festival", date: "2025-05-15", city: "skövde", genre: "pop", description: "Sveriges största popfestival med internationella artister.", image: "Bilder/20241207_215011_972979.jpg" },
+    { name: "Metal Madness", date: "2025-05-01", city: "skövde", genre: "metal", description: "En brutal kväll med de bästa metalbanden.", image: "Bilder/20241201_000118_24720.jpg" }
 ];
 
 let currentDate = new Date();

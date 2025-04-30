@@ -23,7 +23,7 @@ main {
     text-decoration: none;
     text-align: center;
     transition: background 0.3s, transform 0.2s;
-    margin-right: 1850px;
+    margin: 20px auto;
 }
 
 header {
