@@ -22,26 +22,23 @@ body, html {
     height: 100vh;
 }
 
-.left-side
-{
+.left-side {
     background: url('https://files.venuu.se/attachments/000/165/529/1478334d139944ad462a6968f5234f23d04e4848.jpg') no-repeat center center;
     background-size: cover;
 }
 
-.right-side
-{
+.right-side {
     background: url('https://networksites.livenationinternational.com/networksites/lnxx-event-discovery-placeholder.jpg?format=webp&width=3840&quality=75') no-repeat center center;
     background-size: cover;
 }
 
-.overlay 
-{
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.662); 
+    background-color: rgba(0, 0, 0, 0.415); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,6 +47,7 @@ body, html {
     padding: 20px;
 }
 
+/* Styling för text */
 h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
@@ -60,6 +58,7 @@ p {
     margin-bottom: 20px;
 }
 
+/* Knapp-styling */
 .button {
     background-color: #341602;
     color: white;
@@ -76,3 +75,78 @@ p {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Bild i overlay */
+.mmv-front {
+  max-width: 300px;      /* Max bredd 80% av container */
+  max-height: 300px;     /* Max höjd 80% av container */
+  object-fit: contain; /* Bild anpassar sig utan att beskäras */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    gap: 0;
+  }
+
+  .left-side,
+  .right-side {
+    height: auto;
+    min-height: 50vh;
+    position: relative; /* Viktigt! Så overlay positioneras rätt */
+  }
+
+  .overlay {
+    position: absolute; /* Behåll absolute för full täckning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+
+  .mmv-front {
+    max-width: 90%;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  .button {
+    font-size: 1.1em;
+    padding: 6px 14px;
+    margin: 20px 0;
+  }
+
+  .overlay {
+    padding: 30px 15px; /* Använd faktisk padding, inte 'auto' */
+  }
+
+  .mmv-front {
+    max-width: 70%;
+    max-height: 180px;
+  }
+}
+
