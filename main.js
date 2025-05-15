@@ -1,4 +1,4 @@
-//Vilken sida man är på
+// Vilken sida man är på
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('nav ul li a');
 
@@ -17,19 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
-
-// evenamng sökdunktioner 
-//sortera på genre, stad och datum
-
 // 1. Evenemangsdata och variabler
-let events = [
-    { name: "Rock Night", date: "2025-05-10", city: "skövde", genre: "rock", description: "En kväll fylld med rockmusik från lokala band.", image: "Bilder/20241205_233217_540767.jpg" },
-    { name: "Pop Festival", date: "2025-05-15", city: "skövde", genre: "pop", description: "Sveriges största popfestival med internationella artister.", image: "Bilder/20241207_215011_972979.jpg" },
-    { name: "Metal Madness", date: "2025-0-01", city: "skövde", genre: "metal", description: "En brutal kväll med de bästa metalbanden.", image: "Bilder/20241201_000118_24720.jpg" }
-];
+let events = [];  // Tom array - vi fyller den när vi hämtar json
 
 let currentDate = new Date();
 
@@ -106,13 +95,7 @@ function filterEvents() {
     displayResults(filteredEvents);
 }
 
-// 7. När sidan är laddad, filtrera och visa evenemang baserat på URL-parametrarna
-window.onload = function () {
-    filterEvents();
-    renderCalendar();
-};
-
-// 8. Funktion för att rendera kalendern
+// 7. Funktion för att rendera kalendern
 function renderCalendar() {
     daysContainer.innerHTML = ""; // Rensa dagar
 
@@ -120,7 +103,10 @@ function renderCalendar() {
     const month = currentDate.getMonth();
     monthYear.textContent = currentDate.toLocaleDateString('sv-SE', { month: 'long', year: 'numeric' });
 
-    const firstDay = new Date(year, month, 1).getDay();
+    // Justera för att få rätt startdag (i JS är 0=Söndag, i Sverige vill man ofta att måndag=0)
+    let firstDay = new Date(year, month, 1).getDay(); 
+    firstDay = (firstDay === 0) ? 6 : firstDay - 1;  // Om söndag (0), sätt till 6, annars minus 1 för måndag-start
+
     const lastDate = new Date(year, month + 1, 0).getDate();
 
     // Lägg till tomma rutor för att justera startdagarna
@@ -155,7 +141,7 @@ function renderCalendar() {
     }
 }
 
-// 9. Funktion för att visa event för ett specifikt datum
+// 8. Funktion för att visa event för ett specifikt datum
 function showEventsForDate(date) {
     const eventsOnDate = events.filter(event => event.date === date);
     displayResults(eventsOnDate);
@@ -172,12 +158,23 @@ nextButton.addEventListener('click', () => {
     renderCalendar();
 });
 
-// Rendera kalendern första gången vid laddning
-renderCalendar();
-
-
-
-
+// --- NYTILLKOMMET ---
+// 9. Hämta events från extern JSON-fil och kör resten när data är laddad
+fetch('events.json')
+    .then(response => {
+        if (!response.ok) throw new Error('Kunde inte ladda events.json');
+        return response.json();
+    })
+    .then(data => {
+        events = data;
+        filterEvents();
+        renderCalendar();
+    })
+    .catch(error => {
+        console.error('Fel vid inläsning av events:', error);
+        // Visa ev. ett meddelande till användaren
+        resultsContainer.innerHTML = "<p>Misslyckades med att ladda evenemangen. Försök igen senare.</p>";
+    });
 
 
 // Formulär
@@ -236,4 +233,3 @@ form.addEventListener('submit', function (formEvent) {
             responseMessage.style.color = 'red';
         });
 });
-
