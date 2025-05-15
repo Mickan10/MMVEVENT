@@ -153,17 +153,6 @@ function renderCalendar() {
 
         daysContainer.appendChild(dayDiv);
     }
-
-    // Navigera mellan månader
-    prevButton.addEventListener('click', () => {
-        currentDate.setMonth(currentDate.getMonth() - 1); // Minska månaden med 1
-        renderCalendar(); // Rendera kalendern på nytt
-    });
-    
-    nextButton.addEventListener('click', () => {
-        currentDate.setMonth(currentDate.getMonth() + 1); // Öka månaden med 1
-        renderCalendar(); // Rendera kalendern på nytt
-    });
 }
 
 // 9. Funktion för att visa event för ett specifikt datum
@@ -171,6 +160,20 @@ function showEventsForDate(date) {
     const eventsOnDate = events.filter(event => event.date === date);
     displayResults(eventsOnDate);
 }
+
+// Lägg eventlyssnare på knapparna EN gång
+prevButton.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+});
+
+nextButton.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+});
+
+// Rendera kalendern första gången vid laddning
+renderCalendar();
 
 
 

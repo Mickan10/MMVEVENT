@@ -172,36 +172,50 @@
 }
 
 /* För bättre layoutintill event */
+/* Behåll flexbox för behållaren, så kalender och event ligger horisontellt */
 .container-evente {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 20px;
-    background-color: #fffaf0;
-    justify-content: center;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;  /* Gör så att på små skärmar hamnar de under varandra */
+  justify-content: center;
+  padding: 20px;
+  align-items: flex-start; /* Allignera från toppen så kalendern inte sträcks */
 }
 
-.events-container {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
-    max-width: 100%;
-    overflow-y: auto;
+/* Kalendern: fast bredd och maxhöjd så den inte blir jättelång */
+.calendar-container {
+  flex: 0 0 420px;         /* fast bredd */
+  max-height: 600px;       /* maxhöjd */
+  overflow-y: auto;        /* scrollar om kalendern blir högre än maxhöjd */
+  background-color: #ffffff;
+  border: 2px solid #dec69b;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  color: #000000;
 }
+
+/* Event-listan som grid */
+.events-container {
+  flex: 1 1 300px;  /* flexibel bredd */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* responsiv grid */
+  gap: 20px;
+  max-width: 900px;
+}
+
 
 .event-poster {
-    background-color: #ffffff;
-    border: 2px solid #dec69b;
-    border-radius: 10px;
-    padding: 15px;
-    width: 280px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+  background-color: #ffffff;
+  border: 2px solid #dec69b;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  width: 100%;  /* Låt postern fylla grid-cellens bredd */
+  box-sizing: border-box;
 }
 
 .event-poster:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
